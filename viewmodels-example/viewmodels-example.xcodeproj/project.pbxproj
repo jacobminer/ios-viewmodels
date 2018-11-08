@@ -13,9 +13,9 @@
 		23022AE62194A7DE006B3FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23022AE52194A7DE006B3FC0 /* Assets.xcassets */; };
 		23022AE92194A7DE006B3FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23022AE72194A7DE006B3FC0 /* LaunchScreen.storyboard */; };
 		23022AF42194A7DE006B3FC0 /* viewmodels_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022AF32194A7DE006B3FC0 /* viewmodels_exampleTests.swift */; };
-		23022B232194A850006B3FC0 /* viewmodels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23022B222194A850006B3FC0 /* viewmodels.framework */; };
-		23022B242194A850006B3FC0 /* viewmodels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23022B222194A850006B3FC0 /* viewmodels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23022B2F2194BA7C006B3FC0 /* BasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2E2194BA7C006B3FC0 /* BasicViewModel.swift */; };
+		23BBDFBD2194D9E300DC829A /* MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BBDFBC2194D9E300DC829A /* MVVM.framework */; };
+		23BBDFBE2194D9E300DC829A /* MVVM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23BBDFBC2194D9E300DC829A /* MVVM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		23022B252194A850006B3FC0 /* Embed Frameworks */ = {
+		23BBDFBF2194D9E300DC829A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				23022B242194A850006B3FC0 /* viewmodels.framework in Embed Frameworks */,
+				23BBDFBE2194D9E300DC829A /* MVVM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,8 +53,8 @@
 		23022AEF2194A7DE006B3FC0 /* viewmodels-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "viewmodels-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23022AF32194A7DE006B3FC0 /* viewmodels_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewmodels_exampleTests.swift; sourceTree = "<group>"; };
 		23022AF52194A7DE006B3FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23022B222194A850006B3FC0 /* viewmodels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = viewmodels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23022B2E2194BA7C006B3FC0 /* BasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewModel.swift; sourceTree = "<group>"; };
+		23BBDFBC2194D9E300DC829A /* MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23022B232194A850006B3FC0 /* viewmodels.framework in Frameworks */,
+				23BBDFBD2194D9E300DC829A /* MVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 		23022AD22194A7DD006B3FC0 = {
 			isa = PBXGroup;
 			children = (
-				23022B222194A850006B3FC0 /* viewmodels.framework */,
+				23BBDFBC2194D9E300DC829A /* MVVM.framework */,
 				23022ADD2194A7DD006B3FC0 /* viewmodels-example */,
 				23022AF22194A7DE006B3FC0 /* viewmodels-exampleTests */,
 				23022ADC2194A7DD006B3FC0 /* Products */,
@@ -128,7 +128,7 @@
 				23022AD72194A7DD006B3FC0 /* Sources */,
 				23022AD82194A7DD006B3FC0 /* Frameworks */,
 				23022AD92194A7DD006B3FC0 /* Resources */,
-				23022B252194A850006B3FC0 /* Embed Frameworks */,
+				23BBDFBF2194D9E300DC829A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

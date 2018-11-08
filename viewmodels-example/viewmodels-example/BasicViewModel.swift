@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import viewmodels
+import MVVM
 
 class BasicViewModel: ViewModel {
     lazy var temp = OptionalLiveData<String>(parent: self)

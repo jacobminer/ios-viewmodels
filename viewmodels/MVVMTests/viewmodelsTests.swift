@@ -1,15 +1,15 @@
 //
-//  viewmodelsTests.swift
-//  viewmodelsTests
+//  MVVMTests.swift
+//  MVVMTests
 //
 //  Created by Jake on 2018-11-08.
 //  Copyright © 2018 Steamclock Software. All rights reserved.
 //
 
 import XCTest
-@testable import viewmodels
+@testable import MVVM
 
-class viewmodelsTests: XCTestCase {
+class MVVMTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

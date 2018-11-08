@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import viewmodels
+import MVVM
 
 class ViewController: VMViewController {
     lazy var viewModel: BasicViewModel = { return ViewModelCache.shared.viewModel(from: self) }()
