@@ -16,6 +16,10 @@ open class ViewModel {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.foregrounded), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
+    open func created() {
+        // override this to handle initial creation behaviour
+    }
+
     @objc open func foregrounded() {
         // override this to handle app foregrounded behaviour
     }
