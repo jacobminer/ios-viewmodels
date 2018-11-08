@@ -12,7 +12,7 @@ Makes MVVM usage easy! Based on the Android Architecture Components.
   s.author           = { 'Jacob Miner' => 'jake@steamclock.com' }
   s.source           = { :git => 'https://github.com/jacobminer/ios-viewmodels.git', :tag => s.version.to_s }
  
-  s.ios.deployment_target = '12.1'
+  s.ios.deployment_target = '10.0'
   s.source_files = 'viewmodels/MVVM/*.swift'
   s.swift_version = '4.2'
  
