@@ -11,7 +11,7 @@ import Foundation
 open class ViewModel {
     var observedLiveData = [ObservableData]()
 
-    public init() {
+    public required init() {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.backgrounded), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.foregrounded), name: UIApplication.didBecomeActiveNotification, object: nil)
     }

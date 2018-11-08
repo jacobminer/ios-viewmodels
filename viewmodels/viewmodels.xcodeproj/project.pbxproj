@@ -14,6 +14,7 @@
 		23022B292194AC7C006B3FC0 /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B282194AC7C006B3FC0 /* VMViewController.swift */; };
 		23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2A2194AD2D006B3FC0 /* ViewModel.swift */; };
 		23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */; };
+		23022B312194CBA5006B3FC0 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		23022B282194AC7C006B3FC0 /* VMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMViewController.swift; sourceTree = "<group>"; };
 		23022B2A2194AD2D006B3FC0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableLiveData.swift; sourceTree = "<group>"; };
+		23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				23022B282194AC7C006B3FC0 /* VMViewController.swift */,
 				23022B2A2194AD2D006B3FC0 /* ViewModel.swift */,
 				23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */,
+				23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */,
 				23022B272194A875006B3FC0 /* LiveData.swift in Sources */,
 				23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */,
+				23022B312194CBA5006B3FC0 /* ViewModelFactory.swift in Sources */,
 				23022B292194AC7C006B3FC0 /* VMViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
