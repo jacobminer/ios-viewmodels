@@ -63,8 +63,8 @@
 		23022AFE2194A813006B3FC0 = {
 			isa = PBXGroup;
 			children = (
-				23022B0A2194A813006B3FC0 /* viewmodels */,
-				23022B152194A813006B3FC0 /* viewmodelsTests */,
+				23022B0A2194A813006B3FC0 /* MVVM */,
+				23022B152194A813006B3FC0 /* MVVMTests */,
 				23022B092194A813006B3FC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		23022B0A2194A813006B3FC0 /* viewmodels */ = {
+		23022B0A2194A813006B3FC0 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				23022B0B2194A813006B3FC0 /* viewmodels.h */,
@@ -89,16 +89,16 @@
 				23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */,
 				23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */,
 			);
-			path = viewmodels;
+			path = MVVM;
 			sourceTree = "<group>";
 		};
-		23022B152194A813006B3FC0 /* viewmodelsTests */ = {
+		23022B152194A813006B3FC0 /* MVVMTests */ = {
 			isa = PBXGroup;
 			children = (
 				23022B162194A813006B3FC0 /* viewmodelsTests.swift */,
 				23022B182194A813006B3FC0 /* Info.plist */,
 			);
-			path = viewmodelsTests;
+			path = MVVMTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
