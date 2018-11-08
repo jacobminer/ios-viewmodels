@@ -8,8 +8,10 @@
 
 import Foundation
 
-public class MutableLiveData<T: Any>: LiveData {
-    public typealias Observer = ((T?) -> Void)
+public class OptionalLiveData<T: Any>: ObservableData {
+    public typealias Observer = (T?) -> Void
+
+    private var parent: ViewModel
     var index: Int!
 
     func getIndex() -> Int {
@@ -48,19 +50,20 @@ public class MutableLiveData<T: Any>: LiveData {
         }
     }
 
-    public init(initialValue: T? = nil) {
+    public init(parent viewModel: ViewModel, initialValue: T? = nil) {
+        self.parent = viewModel
         self.value = initialValue
     }
 
-    public func observe(owner: VMViewController, _ observer: @escaping Observer) {
+    public func observe(_ observer: @escaping Observer) {
         assert(Thread.isMainThread, "Only add observers from the main thread.")
         self.observer = observer
-        owner.addLiveData(self)
+        parent.addLiveData(self)
     }
 
-    public func removeObserver(owner: VMViewController) {
+    public func removeObserver() {
         self.observer = nil
-        owner.removeLiveData(self)
+        parent.removeLiveData(self)
     }
 
     public func postValue(_ value: T?) {

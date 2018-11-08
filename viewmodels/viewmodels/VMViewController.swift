@@ -9,7 +9,7 @@
 import Foundation
 
 open class VMViewController: UIViewController {
-    private var observedLiveData = [LiveData]()
+    private var viewModels = [ViewModel]()
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -23,39 +23,26 @@ open class VMViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
+    open func setupObservers() {
+        precondition(false, "Override setupObservers")
+    }
+
     open override func viewDidLoad() {
         super.viewDidLoad()
         postViewModelValues()
+        setupObservers()
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         postViewModelValues()
-
-    }
-
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-
-    func addLiveData(_ liveData: LiveData) {
-        liveData.setIndex(observedLiveData.count)
-        observedLiveData.append(liveData)
-    }
-
-    func removeLiveData(_ liveData: LiveData) {
-        observedLiveData.removeAll { $0.getIndex() == liveData.getIndex() }
     }
 
     private func postViewModelValues() {
-        observedLiveData.forEach { liveData in
-            liveData.rePostValue()
-        }
+        viewModels.forEach { $0.postViewModelValues() }
     }
 
     deinit {
-        observedLiveData.forEach {
-            $0.removeObserver(owner: self)
-        }
+        viewModels.forEach { $0.onCleared() }
     }
 }

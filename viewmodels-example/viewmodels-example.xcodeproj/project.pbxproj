@@ -15,6 +15,7 @@
 		23022AF42194A7DE006B3FC0 /* viewmodels_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022AF32194A7DE006B3FC0 /* viewmodels_exampleTests.swift */; };
 		23022B232194A850006B3FC0 /* viewmodels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23022B222194A850006B3FC0 /* viewmodels.framework */; };
 		23022B242194A850006B3FC0 /* viewmodels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23022B222194A850006B3FC0 /* viewmodels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23022B2F2194BA7C006B3FC0 /* BasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2E2194BA7C006B3FC0 /* BasicViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		23022AF32194A7DE006B3FC0 /* viewmodels_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewmodels_exampleTests.swift; sourceTree = "<group>"; };
 		23022AF52194A7DE006B3FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23022B222194A850006B3FC0 /* viewmodels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = viewmodels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23022B2E2194BA7C006B3FC0 /* BasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				23022AE52194A7DE006B3FC0 /* Assets.xcassets */,
 				23022AE72194A7DE006B3FC0 /* LaunchScreen.storyboard */,
 				23022AEA2194A7DE006B3FC0 /* Info.plist */,
+				23022B2E2194BA7C006B3FC0 /* BasicViewModel.swift */,
 			);
 			path = "viewmodels-example";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23022B2F2194BA7C006B3FC0 /* BasicViewModel.swift in Sources */,
 				23022AE12194A7DD006B3FC0 /* ViewController.swift in Sources */,
 				23022ADF2194A7DD006B3FC0 /* AppDelegate.swift in Sources */,
 			);

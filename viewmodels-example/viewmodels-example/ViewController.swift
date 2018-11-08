@@ -10,21 +10,16 @@ import UIKit
 import viewmodels
 
 class ViewController: VMViewController {
+    lazy var viewModel: BasicViewModel = {
+        return BasicViewModel()
+    }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let temp = MutableLiveData<String>()
-
-        temp.observe(owner: self) { string in
+    override func setupObservers() {
+        viewModel.temp.observe { string in
             print(string)
         }
 
-        temp.value = "Hello world"
-
-        // Do any additional setup after loading the view, typically from a nib.
+        viewModel.load()
     }
-
-
 }
 

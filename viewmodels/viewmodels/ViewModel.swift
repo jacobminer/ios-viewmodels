@@ -8,27 +8,44 @@
 
 import Foundation
 
-public class ViewModel {
-//    private var observedLiveData = [LiveData]()
-//
-//    func addLiveData(_ liveData: LiveData) {
-//        liveData.setIndex(observedLiveData.count)
-//        observedLiveData.append(liveData)
-//    }
-//
-//    func removeLiveData(_ liveData: LiveData) {
-//        observedLiveData.removeAll { $0.getIndex() == liveData.getIndex() }
-//    }
-//
-//    func postViewModelValues() {
-//        observedLiveData.forEach { liveData in
-//            liveData.rePostValue()
-//        }
-//    }
-//
-//    deinit {
-//        observedLiveData.forEach {
-//            $0.removeObserver(owner: self)
-//        }
-//    }
+open class ViewModel {
+    var observedLiveData = [ObservableData]()
+
+    public init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.backgrounded), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.foregrounded), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc open func foregrounded() {
+        // override this to handle app foregrounded behaviour
+    }
+
+    @objc open func backgrounded() {
+        // override this to handle app backgrounded behaviour
+    }
+
+    open func onCleared() {
+        // override this to handle additional clearing behaviour
+    }
+
+    deinit {
+        onCleared()
+        observedLiveData.forEach { $0.removeObserver() }
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    func addLiveData(_ liveData: ObservableData) {
+        liveData.setIndex(observedLiveData.count)
+        observedLiveData.append(liveData)
+    }
+
+    func removeLiveData(_ liveData: ObservableData) {
+        observedLiveData.removeAll { $0.getIndex() == liveData.getIndex() }
+    }
+
+    func postViewModelValues() {
+        observedLiveData.forEach { liveData in
+            liveData.rePostValue()
+        }
+    }
 }
