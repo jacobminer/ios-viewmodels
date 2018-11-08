@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'MVVM'
+  s.name             = 'MVVMBuildItDay'
   s.version          = '0.1'
   s.summary          = 'MVVM based on Android Architecture Components'
  
