@@ -13,9 +13,9 @@ class ViewController: VMViewController {
     lazy var viewModel: BasicViewModel = { return ViewModelCache.shared.viewModel() }()
 
     override func setupObservers() {
-        viewModel.temp.observe { string in
+        viewModel.temp.observe(ObserverData { string in
             print(string)
-        }
+        })
 
         viewModel.load()
     }

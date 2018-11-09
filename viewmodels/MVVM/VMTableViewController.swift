@@ -29,25 +29,25 @@ open class VMTableViewController: UITableViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewController: viewDidLoad")
         postViewModelValues()
+        print("ViewController: Setting up observers")
         setupObservers()
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("ViewController: viewWillAppear")
         postViewModelValues()
     }
 
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        viewModels.forEach { $0.clearObservers() }
-    }
-
     private func postViewModelValues() {
+        print("ViewController: Posting values")
         viewModels.forEach { $0.postViewModelValues() }
     }
 
     deinit {
+        print("ViewController: deinit, calling clear observers on viewModels")
         viewModels.forEach { $0.clearObservers() }
     }
 }

@@ -15,6 +15,7 @@ public class ViewModelCache {
 
     private init() {
         // enforce singleton status
+        print("Initialized ViewModelCache")
     }
 
     public func viewModel<T: ViewModel>(afterCreated: ((T) -> Void)? = nil) -> T {

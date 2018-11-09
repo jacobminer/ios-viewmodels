@@ -8,9 +8,24 @@
 
 import Foundation
 
-public class OptionalLiveData<T: Any>: ObservableData {
-    public typealias Observer = (T?) -> Void
+public protocol Observer: class {
+    associatedtype T
+    func updated(value: T?)
+}
 
+public class ObserverData<U: Any>: Observer {
+    public typealias T = U
+    private let update: ((U?) -> Void)
+    public func updated(value: U?) {
+        update(value)
+    }
+
+    public init(update: @escaping ((U?) -> Void)) {
+        self.update = update
+    }
+}
+
+public class OptionalLiveData<T: Any>: ObservableData {
     private var parent: ViewModel
     var index: Int!
 
@@ -31,7 +46,7 @@ public class OptionalLiveData<T: Any>: ObservableData {
         }
     }
 
-    private var observer: Observer? {
+    private weak var observer: ObserverData<T>? {
         didSet {
             guard let observer = observer else {
                 return
@@ -39,7 +54,7 @@ public class OptionalLiveData<T: Any>: ObservableData {
 
             // if we have a value when this is set, fire the value
             if let value = value {
-                observer(value)
+                observer.updated(value: value)
             }
         }
     }
@@ -55,7 +70,7 @@ public class OptionalLiveData<T: Any>: ObservableData {
         self.value = initialValue
     }
 
-    public func observe(_ observer: @escaping Observer) {
+    public func observe(_ observer: ObserverData<T>) {
         assert(Thread.isMainThread, "Only add observers from the main thread.")
         self.observer = observer
         parent.addLiveData(self)
@@ -80,11 +95,11 @@ public class OptionalLiveData<T: Any>: ObservableData {
         }
 
         // notify observers that this was set
-        observer(value)
+        observer.updated(value: value)
 
     }
 
     func rePostValue() {
-        observer?(value)
+        observer?.updated(value: value)
     }
 }

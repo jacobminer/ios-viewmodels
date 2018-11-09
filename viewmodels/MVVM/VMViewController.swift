@@ -29,20 +29,25 @@ open class VMViewController: UIViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+        print("ViewController: viewDidLoad")
         postViewModelValues()
+        print("ViewController: Setting up observers")
         setupObservers()
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("ViewController: viewWillAppear")
         postViewModelValues()
     }
 
     private func postViewModelValues() {
+        print("ViewController: Posting values")
         viewModels.forEach { $0.postViewModelValues() }
     }
 
     deinit {
-        viewModels.forEach { $0.onCleared() }
+        print("ViewController: deinit, calling clear observers on viewModels")
+        viewModels.forEach { $0.clearObservers() }
     }
 }
