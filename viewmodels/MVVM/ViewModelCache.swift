@@ -17,10 +17,10 @@ public class ViewModelCache {
         // enforce singleton status
     }
 
-    public func viewModel<T: ViewModel>(from object: AnyObject, afterCreated: ((T) -> Void)? = nil) -> T {
-        let objectName = String(describing: object)
+    public func viewModel<T: ViewModel>(afterCreated: ((T) -> Void)? = nil) -> T {
+        let objectName = String(describing: T.self)
         if (viewModels[objectName] == nil) {
-            let viewModel = T()
+            let viewModel = T.init()
             viewModels[objectName] = viewModel
             afterCreated?(viewModel)
             viewModel.created()

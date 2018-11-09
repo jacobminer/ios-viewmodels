@@ -14,7 +14,7 @@
 		23022B292194AC7C006B3FC0 /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B282194AC7C006B3FC0 /* VMViewController.swift */; };
 		23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2A2194AD2D006B3FC0 /* ViewModel.swift */; };
 		23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */; };
-		23022B312194CBA5006B3FC0 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */; };
+		23022B312194CBA5006B3FC0 /* ViewModelCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B302194CBA5006B3FC0 /* ViewModelCache.swift */; };
 		23EF05AA2194E1F30086F1C3 /* VMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		23022B282194AC7C006B3FC0 /* VMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMViewController.swift; sourceTree = "<group>"; };
 		23022B2A2194AD2D006B3FC0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableLiveData.swift; sourceTree = "<group>"; };
-		23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		23022B302194CBA5006B3FC0 /* ViewModelCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCache.swift; sourceTree = "<group>"; };
 		23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +89,7 @@
 				23022B282194AC7C006B3FC0 /* VMViewController.swift */,
 				23022B2A2194AD2D006B3FC0 /* ViewModel.swift */,
 				23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */,
-				23022B302194CBA5006B3FC0 /* ViewModelFactory.swift */,
+				23022B302194CBA5006B3FC0 /* ViewModelCache.swift */,
 				23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */,
 			);
 			path = MVVM;
@@ -217,7 +217,7 @@
 				23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */,
 				23022B272194A875006B3FC0 /* LiveData.swift in Sources */,
 				23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */,
-				23022B312194CBA5006B3FC0 /* ViewModelFactory.swift in Sources */,
+				23022B312194CBA5006B3FC0 /* ViewModelCache.swift in Sources */,
 				23022B292194AC7C006B3FC0 /* VMViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
