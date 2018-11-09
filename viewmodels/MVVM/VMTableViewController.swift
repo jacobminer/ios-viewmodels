@@ -38,11 +38,16 @@ open class VMTableViewController: UITableViewController {
         postViewModelValues()
     }
 
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModels.forEach { $0.clearObservers() }
+    }
+
     private func postViewModelValues() {
         viewModels.forEach { $0.postViewModelValues() }
     }
 
     deinit {
-        viewModels.forEach { $0.onCleared() }
+        viewModels.forEach { $0.clearObservers() }
     }
 }

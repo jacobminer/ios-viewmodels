@@ -32,9 +32,13 @@ open class ViewModel {
         // override this to handle additional clearing behaviour
     }
 
-    deinit {
+    func clearObservers() {
         onCleared()
         observedLiveData.forEach { $0.removeObserver() }
+    }
+
+    deinit {
+        clearObservers()
         NotificationCenter.default.removeObserver(self)
     }
 
