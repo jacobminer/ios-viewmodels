@@ -10,7 +10,7 @@ import UIKit
 import MVVM
 
 class ViewController: VMViewController {
-    lazy var viewModel: BasicViewModel = { return ViewModelCache.shared.viewModel(from: self) }()
+    lazy var viewModel: BasicViewModel = { return ViewModelCache.shared.viewModel() }()
 
     override func setupObservers() {
         viewModel.temp.observe { string in
