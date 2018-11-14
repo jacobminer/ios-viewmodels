@@ -47,6 +47,7 @@ open class ViewModel {
         onCleared()
         print("\(name): Removing all observers")
         observedLiveData.forEach { $0.removeObserver() }
+        observedLiveData.forEach { removeLiveData($0) }
     }
 
     deinit {
