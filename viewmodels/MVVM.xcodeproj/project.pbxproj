@@ -15,7 +15,6 @@
 		23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2A2194AD2D006B3FC0 /* ViewModel.swift */; };
 		23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */; };
 		23EF05AA2194E1F30086F1C3 /* VMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */; };
-		23F5E9E321950B9800062F1E /* ViewModelCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5E9E221950B9800062F1E /* ViewModelCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +39,6 @@
 		23022B2A2194AD2D006B3FC0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableLiveData.swift; sourceTree = "<group>"; };
 		23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMTableViewController.swift; sourceTree = "<group>"; };
-		23F5E9E221950B9800062F1E /* ViewModelCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 				23022B2C2194B6E8006B3FC0 /* MutableLiveData.swift */,
 				23022B0B2194A813006B3FC0 /* MVVM.h */,
 				23022B2A2194AD2D006B3FC0 /* ViewModel.swift */,
-				23F5E9E221950B9800062F1E /* ViewModelCache.swift */,
 				23EF05A92194E1F20086F1C3 /* VMTableViewController.swift */,
 				23022B282194AC7C006B3FC0 /* VMViewController.swift */,
 			);
@@ -216,7 +213,6 @@
 				23EF05AA2194E1F30086F1C3 /* VMTableViewController.swift in Sources */,
 				23022B2D2194B6E8006B3FC0 /* MutableLiveData.swift in Sources */,
 				23022B272194A875006B3FC0 /* LiveData.swift in Sources */,
-				23F5E9E321950B9800062F1E /* ViewModelCache.swift in Sources */,
 				23022B2B2194AD2D006B3FC0 /* ViewModel.swift in Sources */,
 				23022B292194AC7C006B3FC0 /* VMViewController.swift in Sources */,
 			);
