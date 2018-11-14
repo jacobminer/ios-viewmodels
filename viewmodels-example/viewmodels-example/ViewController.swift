@@ -9,20 +9,24 @@
 import UIKit
 import MVVM
 
-class ViewController: VMViewController<BasicViewModel> {
+class ViewController: VMViewController {
     @IBOutlet weak var label: UILabel!
 
+    override var viewModel: ViewModel {
+        return basicViewModel
+    }
+    private let basicViewModel = BasicViewModel()
+
     override func setupObservers() {
-        viewModel.observe(viewModel.temp, ObserverData { string in
+        basicViewModel.observe(basicViewModel.temp, ObserverData { string in
             self.label.text = string
         })
-//        viewModel.temp.observe(viewModel, )
 
-        viewModel.load()
+        basicViewModel.load()
     }
 
     @IBAction func counter(_ sender: Any) {
-        viewModel.add()
+        basicViewModel.add()
     }
 }
 

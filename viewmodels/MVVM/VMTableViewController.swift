@@ -8,9 +8,10 @@
 
 import Foundation
 
-open class VMTableViewController<T: ViewModel>: UITableViewController {
-    private var _viewModel: T = T.init()
-    open var viewModel: T { get { return _viewModel } }
+open class VMTableViewController: UITableViewController {
+    open var viewModel: ViewModel {
+        return ViewModel()
+    }
 
     public init() {
         super.init(nibName: nil, bundle: nil)
