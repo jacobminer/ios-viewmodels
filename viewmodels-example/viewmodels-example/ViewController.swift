@@ -9,15 +9,20 @@
 import UIKit
 import MVVM
 
-class ViewController: VMViewController {
-    lazy var viewModel: BasicViewModel = { return ViewModelCache.shared.viewModel() }()
+class ViewController: VMViewController<BasicViewModel> {
+    @IBOutlet weak var label: UILabel!
 
     override func setupObservers() {
-        viewModel.temp.observe(ObserverData { string in
-            print(string)
+        viewModel.observe(viewModel.temp, ObserverData { string in
+            self.label.text = string
         })
+//        viewModel.temp.observe(viewModel, )
 
         viewModel.load()
+    }
+
+    @IBAction func counter(_ sender: Any) {
+        viewModel.add()
     }
 }
 

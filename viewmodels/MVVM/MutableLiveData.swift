@@ -26,17 +26,6 @@ public class ObserverData<U: Any>: Observer {
 }
 
 public class OptionalLiveData<T: Any>: ObservableData {
-    private var parent: ViewModel
-    var index: Int!
-
-    func getIndex() -> Int {
-        return index
-    }
-
-    func setIndex(_ index: Int) {
-        self.index = index
-    }
-
     var _value: Any? {
         get {
             return value
@@ -46,7 +35,7 @@ public class OptionalLiveData<T: Any>: ObservableData {
         }
     }
 
-    private weak var observer: ObserverData<T>? {
+    var observer: ObserverData<T>? {
         didSet {
             guard let observer = observer else {
                 return
@@ -65,20 +54,13 @@ public class OptionalLiveData<T: Any>: ObservableData {
         }
     }
 
-    public init(parent viewModel: ViewModel, initialValue: T? = nil) {
-        self.parent = viewModel
+    public init(initialValue: T? = nil) {
         self.value = initialValue
     }
 
-    public func observe(_ observer: ObserverData<T>) {
-        assert(Thread.isMainThread, "Only add observers from the main thread.")
-        self.observer = observer
-        parent.addLiveData(self)
-    }
-
     public func removeObserver() {
+        assert(Thread.isMainThread, "Only remove observers from the main thread.")
         self.observer = nil
-        parent.removeLiveData(self)
     }
 
     public func postValue(_ value: T?) {

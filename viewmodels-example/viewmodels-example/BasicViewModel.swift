@@ -10,7 +10,13 @@ import Foundation
 import MVVM
 
 class BasicViewModel: ViewModel {
-    lazy var temp = OptionalLiveData<String>(parent: self)
+    lazy var temp = OptionalLiveData<String>()
+
+    var counter = 0 {
+        didSet {
+            temp.value = "\(counter)"
+        }
+    }
 
     func load() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3 ) {
@@ -28,5 +34,9 @@ class BasicViewModel: ViewModel {
 
     override func onCleared() {
         self.temp.value = "Cleared"
+    }
+
+    func add() {
+        counter += 1
     }
 }

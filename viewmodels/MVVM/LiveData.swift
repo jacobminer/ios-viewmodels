@@ -10,8 +10,6 @@ import Foundation
 
 internal protocol ObservableData {
     var _value: Any? { get set }
-    func setIndex(_ index: Int)
-    func getIndex() -> Int
     func removeObserver()
     func rePostValue()
 }

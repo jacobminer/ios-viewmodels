@@ -21,6 +21,13 @@ open class ViewModel {
         print("\(name) initialized")
     }
 
+    public func observe<T>(_ liveData: OptionalLiveData<T>, _ observer: ObserverData<T>) {
+        assert(Thread.isMainThread, "Only add observers from the main thread.")
+        liveData.observer = observer
+        print("\(name): Adding live data \(String(describing: liveData)), now observing \(observedLiveData.count + 1) live data instances")
+        observedLiveData.append(liveData)
+    }
+
     open func created() {
         print("\(name): Created view model: \(String(describing: self))")
         // override this to handle initial creation behaviour
@@ -47,24 +54,14 @@ open class ViewModel {
         onCleared()
         print("\(name): Removing all observers")
         observedLiveData.forEach { $0.removeObserver() }
-        observedLiveData.forEach { removeLiveData($0) }
+        print("\(name): Removing all live data")
+        observedLiveData.removeAll()
     }
 
     deinit {
         clearObservers()
         print("\(name): Removing notification center observers")
         NotificationCenter.default.removeObserver(self)
-    }
-
-    func addLiveData(_ liveData: ObservableData) {
-        print("\(name): Adding live data \(String(describing: liveData)), now observing \(observedLiveData.count + 1) live data instances")
-        liveData.setIndex(observedLiveData.count)
-        observedLiveData.append(liveData)
-    }
-
-    func removeLiveData(_ liveData: ObservableData) {
-        print("\(name): Removing live data \(String(describing: liveData))")
-        observedLiveData.removeAll { $0.getIndex() == liveData.getIndex() }
     }
 
     func postViewModelValues() {

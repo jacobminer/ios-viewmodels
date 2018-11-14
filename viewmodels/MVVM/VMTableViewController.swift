@@ -8,8 +8,9 @@
 
 import Foundation
 
-open class VMTableViewController: UITableViewController {
-    private var viewModels = [ViewModel]()
+open class VMTableViewController<T: ViewModel>: UITableViewController {
+    private var _viewModel: T = T.init()
+    open var viewModel: T { get { return _viewModel } }
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -27,27 +28,23 @@ open class VMTableViewController: UITableViewController {
         precondition(false, "Override setupObservers")
     }
 
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        print("ViewController: viewDidLoad")
-        postViewModelValues()
-        print("ViewController: Setting up observers")
-        setupObservers()
-    }
-
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("ViewController: viewWillAppear")
-        postViewModelValues()
+        print("ViewController: Setting up observers")
+        setupObservers()
+        print("ViewController: Posting view model values")
+        viewModel.postViewModelValues()
     }
 
-    private func postViewModelValues() {
-        print("ViewController: Posting values")
-        viewModels.forEach { $0.postViewModelValues() }
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController: view disappearing, calling clear observers on viewModels")
+        viewModel.clearObservers()
     }
 
     deinit {
         print("ViewController: deinit, calling clear observers on viewModels")
-        viewModels.forEach { $0.clearObservers() }
+        viewModel.clearObservers()
     }
 }
