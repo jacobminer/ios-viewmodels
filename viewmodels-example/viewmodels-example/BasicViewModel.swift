@@ -24,6 +24,10 @@ class BasicViewModel: ViewModel {
         }
     }
 
+    override func created() {
+        counter = 20
+    }
+
     override func backgrounded() {
         self.temp.value = "Backgrounded"
     }

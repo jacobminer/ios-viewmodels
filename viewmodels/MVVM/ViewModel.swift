@@ -19,6 +19,7 @@ open class ViewModel {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.backgrounded), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.foregrounded), name: UIApplication.didBecomeActiveNotification, object: nil)
         print("\(name) initialized")
+        created()
     }
 
     public func observe<T>(_ liveData: OptionalLiveData<T>, _ observer: ObserverData<T>) {
