@@ -1,6 +1,13 @@
-### Usage ###
+## Install the Pod ##
 
-## General Setup ##
+Add the following to your `Podfile`
+`pod 'MVVMBuildItDay'`
+
+Then run `pod install`.
+
+
+## Usage ##
+
 In your `AppDelegate.swift` add the following 
 
 ```swift
