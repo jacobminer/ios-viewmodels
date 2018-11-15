@@ -4,6 +4,7 @@
 In your `AppDelegate.swift` add the following 
 
 ```swift
+import MVVMBuildItDay
 import UIKit
 
 @UIApplicationMain
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 Create a subclass of ViewModel
 ```swift
-import MVVM 
+import MVVMBuildItDay 
 
 class BasicViewModel: ViewModel {
     // we'll come back to this later
@@ -28,6 +29,8 @@ class BasicViewModel: ViewModel {
 
 In your UIViewController add the following
 ```swift
+import MVVMBuildItDay
+
 class ViewController: UIViewController {
     private let basicViewModel = BasicViewModel() // replace with your new ViewModel subclass
 }
@@ -50,7 +53,7 @@ extension ViewController: LiveDataObserver  {
 In order to observe data, you must have data to observe, so add some liveData to your view model
 
 ```swift
-import MVVM 
+import MVVMBuildItDay 
 
 class BasicViewModel: ViewModel {
     lazy var simpleNumber = LiveData<Int>(self)
