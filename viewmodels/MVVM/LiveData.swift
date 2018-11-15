@@ -8,10 +8,11 @@
 
 import Foundation
 
-// Observable data
+// Observable data implementation
 public class LiveData<T: Any>: ObservableData {
     public typealias Observer = (T?) -> Void
 
+    // need to keep a reference to viewmodel
     private var viewModel: ViewModel
 
     var _value: Any? {
@@ -32,17 +33,20 @@ public class LiveData<T: Any>: ObservableData {
         }
     }
 
+    // notify observer when value changes
     public var value: T? {
         didSet {
             notifyObserver()
         }
     }
 
+    // initialize with a view model and an optional initial value
     public init(_ viewModel: ViewModel, initialValue: T? = nil) {
         self.viewModel = viewModel
         self.value = initialValue
     }
 
+    // add observer to this data, must occur on main thread
     public func observe(observer: @escaping Observer) {
         assert(Thread.isMainThread, "Only add observer from the main thread.")
         self.observer = observer
@@ -54,6 +58,7 @@ public class LiveData<T: Any>: ObservableData {
         self.observer = nil
     }
 
+    // forces the value to be updated on the main thread
     public func postValue(_ value: T?) {
         DispatchQueue.main.async {
             self.value = value

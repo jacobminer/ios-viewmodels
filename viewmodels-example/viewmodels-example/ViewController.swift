@@ -9,15 +9,18 @@
 import UIKit
 import MVVM
 
-class ViewController: VMViewController {
+class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
 
-    override var viewModel: ViewModel {
-        return basicViewModel
-    }
     private let basicViewModel = BasicViewModel()
 
-    override func setupObservers() {
+    @IBAction func counter(_ sender: Any) {
+        basicViewModel.add()
+    }
+}
+
+extension ViewController: LiveDataObserver  {
+    func setupObservers() {
         basicViewModel.temp.observe { string in
             self.label.text = string
         }
@@ -25,8 +28,9 @@ class ViewController: VMViewController {
         basicViewModel.load()
     }
 
-    @IBAction func counter(_ sender: Any) {
-        basicViewModel.add()
+    var viewModel: ViewModel {
+        get {
+            return basicViewModel
+        }
     }
 }
-
