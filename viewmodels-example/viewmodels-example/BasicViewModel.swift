@@ -10,7 +10,7 @@ import Foundation
 import MVVM
 
 class BasicViewModel: ViewModel {
-    lazy var temp = OptionalLiveData<String>()
+    lazy var temp = LiveData<String>(self)
 
     var counter = 0 {
         didSet {
@@ -37,7 +37,7 @@ class BasicViewModel: ViewModel {
     }
 
     override func onCleared() {
-        self.temp.value = "Cleared"
+//        self.temp.value = "Cleared"
     }
 
     func add() {

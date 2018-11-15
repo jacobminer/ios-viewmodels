@@ -8,6 +8,7 @@
 
 import Foundation
 
+// ViewModels handle live data
 open class ViewModel {
     var observedLiveData = [ObservableData]()
 
@@ -22,9 +23,8 @@ open class ViewModel {
         created()
     }
 
-    public func observe<T>(_ liveData: OptionalLiveData<T>, _ observer: ObserverData<T>) {
+    func addLiveData<T>(_ liveData: LiveData<T>) {
         assert(Thread.isMainThread, "Only add observers from the main thread.")
-        liveData.observer = observer
         print("\(name): Adding live data \(String(describing: liveData)), now observing \(observedLiveData.count + 1) live data instances")
         observedLiveData.append(liveData)
     }

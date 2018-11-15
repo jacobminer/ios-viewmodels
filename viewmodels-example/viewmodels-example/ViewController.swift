@@ -18,9 +18,9 @@ class ViewController: VMViewController {
     private let basicViewModel = BasicViewModel()
 
     override func setupObservers() {
-        basicViewModel.observe(basicViewModel.temp, ObserverData { string in
+        basicViewModel.temp.observe { string in
             self.label.text = string
-        })
+        }
 
         basicViewModel.load()
     }
